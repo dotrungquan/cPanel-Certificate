@@ -1,0 +1,34 @@
+- Which of the following suEXEC modes create a new parent process for each user? => ProcessGroup
+-Which of the following suEXEC modes are not compatible with opcode caching?=> Worker Mode
+- Which of the following are one of the primary limitations that should be considered with OPCache, regardless of the version of LSWS you're using? => Increased RAM requirements.
+- Which of the following options would be a viable method to install OPCache on a cPanel & WHM environment? => Install the package using EasyApache, in WHM or via the command line.
+- Of the following paths, which would theoretically function as a correct path to an appropriate custom PHP configuration include file for a single user's domain? For the purposes of this question, assume that all usernames and domains in the answer choices are legitimate. => /etc/apache2/confd/userdata/std/2_4/google/google.com/myinclude.conf
+- Adding the following value to your Environment Variables within the LSWS WebAdmin Console, under the External Apps interface, will enable all of your users to use which file to define custom PHP configurations within their individual accounts' web folders?
+
+Environment Variable:
+
+LSPHP_ENABLE_USER_INI=on
+
+
+
+Tip: Just type the exact name of the file itself; we don't need any paths or directories here. => .user.ini
+
+- Which of the following circumstances might result in a 503 error occurring on a user site? => An attack is occurring on the site in question.
+- A user is reporting frequent timeouts on connection attempts. Which of the following may be a potential solution to resolve the situation? => Set External Application Abort to "No Abort".
+- Which of the following is the correct path used to execute the enable_ruby_python_selector.sh script? => /usr/local/lsws/admin/misc/enable_ruby_python_selector.sh
+- Which of the following types of protection does Litespeed provide for Wordpress? => Brute Force
+- Port 443 UDP must be allowed in and out of your server to allow which of the following features to function successfully? => QUIC
+- Because ModSecurity component, when used with Litespeed, only processes dynamic requests, not static, what impact should be expected as a result? => ModSecurity experiences improved performance.
+- What is the most granular level of PHP version customization that LSPHP supports? => Directory-level
+
+- Which of the following statements best describes LiteSpeed's support for reCAPTCHA => 
+- For which of these systems does Litespeed not offer an official LSCache plugin=> OctoberCMS
+- Which of the following statements most accurately describes LSPHP's support for Opcode Caching? => LSPHP supports Opcode Caching within all three suExec modes.
+- For which of the following web server software options does Litespeed work as a drop-in replacement => Apache
+- Of the following platforms, which does LiteSpeed provide brute protection capabilities for? => Wordpress
+- Which of the following statements most accurately describes the primary requirement for QUIC to function successfully on your server? => You must ensure that port 443 on UDP is allowed in and out through the firewall.
+- Which of the following Apache rewrite flags work slightly differently when using LiteSpeed, as opposed to Apache? => The [L] (last) flag.
+- Which of the following statements most accurately describes LSPHP's PHP version support? => LSPHP supports the use of different PHP versions per-account, within a web server's global configuration.
+- Which of the following options most accurately indicates the primary reason that Mod Security experiences a significant performance boost when used with LiteSpeed? => ModSecurity in Litespeed only processes rules for dynamic requests, not static.
+- Which of the following types of architectures does LiteSpeed utilize? => Event-driven Architecture
+- Which of the following statements most accurately describes LSPHP's PHP version support? => LSPHP supports the use of different PHP versions per-directory, within an account's file structure.
