@@ -1097,5 +1097,10 @@ In a cPanel & WHM environment, if you select PHP 5.6 as the default PHP version,
 /opt/cpanel/ea-php56/root/etc/php.ini
 Which of the following best describes the difference between a process and a thread?
 
-
+The system's administrator receives an email alert from WHM when which of the following conditions occur?
+The hostname does not point to the main IP address on the server.
 Processes can contain multiple threads, and the threads contained in the process share its resources.
+
+
+Which of the following described situations would utilize DNS resolution as a key component of its handling?
+To determine where to send mail for a domain.
