@@ -119,3 +119,5 @@ All of the following type of code ca be used as a hook action code are permissib
 .exe
 Which API allows you to manage cPanel licenses?
 Manage2 API
+All of the following resource limits may be set in a package except ...
+cPanel accounts
