@@ -1,1 +1,166 @@
 
+18. Which of the following best describes JetBackup's support for specifically backing up mailboxes? 
+
+#JetBackup does not support this, but a full account backup will contain all user data including its mailboxes.
+JetBackup supports this through the interface, by checking “Backup Only Email Structure” under “Backup contains” from within a job's settings.
+JetBackup supports this through the use of file excludes.
+JetBackup does not support this. However, this can still be achieved through the use of scripted hooks.
+
+
+16. Which of the following statements best describes JetBackup's support for single-file restoration from within a backup?
+
+This is not possible with JetBackup. Only a full account restore is possible.
+This is possible with JetBackup, but the capability is limited to incremental backups only
+#This is possible with JetBackup. Single files can always be restored from any backup.
+This is possible with JetBackup, but only when using the Google Drive destination type.
+
+
+2. A client has accounts that utilize over 1 million inodes. What is the best way for this client to skip these accounts during a backup job?
+
+#The client should create a new filter type called “Inode usage”, then set limits appropriately.
+The client should create a new hook that automatically checks accounts' inode counts, and triggers a failure action appropriately.
+The client should create a new filter type called “Accounts”, then choose the accounts that they would like to exclude.
+The client should choose only the accounts they want to backup, when adjusting a backup job's settings, skipping the affected accounts when doing so.
+
+
+
+4. A client wishes to receive specific notifications, such as restoration, backup, and clone completion. They would also like to disable some notifications. To which Jetbackup interface should they navigate to accomplish this?
+
+#The client should use the WHM → JetBackup → Settings → Notification interface to accomplish this.
+The client should use the WHM → Contact Manager → JetBackup interface to accomplish this.
+This cannot be done in the interface and requires a direct file change to the /root/.forward file.
+There is no ability to change notification settings either in or outside of the interface.
+
+
+
+12. Is there a way to log all backup activity for a specific cPanel account?  
+
+Yes, by using cron jobs to monitor JetBackup, and then performing an action when it is identified that a certain account has been backed up.
+No. There is no current method to log backup activity for a specific account.
+Yes. Using the Account Settings interface in cPanel, this capability can be enabled.
+#Yes, but only through the use of a scripted JetBackup hook for the appropriate action.
+
+
+
+=======
+
+1. Can you set the backup to run every 30 minutes?
+
+#No. The minimum selectable interval is Hourly.
+Yes, but only when the job is not already in progress.
+Yes. Any interval can be specified, and there is no minimum.
+No. JetBackup randomly determines the scheduling, and the minimum possible interval is Daily.
+
+
+
+
+3. Which of the following options best describes the definition of an orphan backup?
+
+A backup from a non-cPanel environment that is still being stored physically on the system.
+A backup of an Addon Domain that is not linked to any physical cPanel account.
+#A backup of an account that has been terminated from WHM, but is still being stored physically.
+A backup that has remained unindexed for more than 30 days, and has been purged from the database as a result.
+
+
+
+5. Which of the following options best describes the role and purpose of a JB Config?
+
+A JB Config does not exist.
+#A JB Config exists as internal JetBackup data containing its full configuration and is useful for disaster migration or recovery.
+A JB Config is a unique snapshot of your system’s architecture, used for licensing and support diagnostics.
+A JB Config exists as JetBackup internal system database, and is useful for analyzing logs and statistics.
+
+
+6. Which of the following options best defines a Safety Backup?
+
+A safety backup is a backup that is never removed from the system and should be used specifically for crash recovery.
+#A safety backup is an account backup, or snapshot, taken prior to performing a full account restoration.
+A safety backup is a pre-defined snapshot of an account taken prior to a website update.
+A safety backup is a special system backup taken prior to a cPanel & WHM upgrade.
+
+7. Can a client schedule a backup job to run immediately after another backup job? 
+
+No. However, backups can scheduled to run simultaneously.
+Sometimes. Only backups of the same backup type are able to be run sequentially.
+#Yes. The client should use the schedule type labeled: After job is done
+No. Each backup will run explicitly at the time specified within the job's settings.
+
+8. Which of the following options best describes JetBackup's support for specifically backing up DNS Zones?
+
+JetBackup supports this through the interface, by checking only “DNS Zones” under “Backup contains” from within a job's settings.
+JetBackup supports this through the use of file excludes.
+JetBackup does not support this. However, this can still be achieved through the use of scripted hooks.
+#JetBackup does not support this, but a full account backup will contain all user data including DNS Zones.
+
+
+9. Which of the following statements most accurately describes the status of support for Incremental Backups in JetBackup?
+
+No incremental backup support exists for any destination types.
+#Some backup destination types support incremental backups, but not all.
+Only the Amazon S3 backup destination type supports incremental backups.
+All backup destination types support incremental backups.
+
+
+10. A client can see backups in WHM for their customer, but when the customer tries to browse their backups through the JetBackup section of the cPanel user interface, it appears as if there are no backups. Which of the following choices describes the most likely explanation for this? 
+
+The administrator has prevented access to snapshots through JetBackup Access Control List (ACL).
+#The administrator has enabled the “Hide Snapshots” setting for this backup destination.
+JetBackup is not enabled within WHM's Feature Manager.
+The backup job index is incorrect, requiring the administrator to perform a re-indexing operation to resolve it.
+
+11. Which of the following options indicates the primary requirement for a snapshot to be used?
+
+An active backup job must exist.
+An active backup job must exist, and must be configured to use destinations that support incremental backups.
+#An active backup job must exist, and must be configured to use a full backup.
+An active backup job must exist, and must be configured to use destinations that support bucket storage.
+
+
+
+13. Which of the following statements most accurately describes the status of support for Compressed Backups in Jetbackup?
+
+Some backup destination types support compressed backups, but not all.
+No compressed backup support exists for any destination types.
+#All backup destination types support compressed backups.
+Only the Rsync.net backup destination type supports compressed backups.
+
+
+14. Which of the following statements best describes JetBackup's support for allowing a cPanel user to only view backups, without actually being able to restore them?
+
+This is possible with JetBackup, but is dependant on whether the backup job type is utilizing an incremental or compressed type of backup.
+There is no means of restricting this with JetBackup; once a cPanel user has access to their backups, they are not limited on the actions that they may perform with them.
+# This is possible with JetBackup through the use of JetBackup's permissions system.
+This is the default setting with JetBackup on a cPanel & WHM environment; only root administrators can restore backups by default.
+
+
+15. A client has enabled Cloudlinux support. How will this affect a backup job's available resources and performance?
+
+The job will run as usual, without any resource or performance impact, as Cloudlinux support only introduces a security layer.
+The job will run as usual, with no performance or resource impact, as Cloudlinux support only affects the verbosity of logging and debug information.
+The job will perform much faster, as Cloudlinux support will optimize the server's performance if enabled on in a native Cloudlinux operating system.
+#The job will run within a limited environment, will consume less CPU & IO, and most likely take longer to complete.
+
+
+17. When editing user permissions in the JetBackup interface, which of the following best describes the difference between the use of the terms “No”, and “Never”? 
+
+'Never' will ignore action entirely; 'No' will ignore the action, but log its occurrence.
+'Never' will deny the action and its children; 'No' will only deny the action.
+There is no real difference between the two.
+#Never' will deny the action, and won’t allow an override; 'No' will simply deny the action.
+
+
+
+
+19. Which of the following choices best describes the benefits and general purpose of using a backup hook?
+
+Backup hooks exist to allow the user to install 3rd-party plugins that interact with JetBackup's automation.
+#Backup hooks exist to allow the user to trigger actions with parameters automatically at a specific point.
+Backup hooks exist for JetBackup internal purposes only, and should not be used by customers and end-users.
+Backup hooks exist to allow the user to rewrite and modify JetBackup's core behaviors.
+
+20. Which of the following best describes the fundamental difference between an archived backup and a compressed backup?
+
+The two backup types are synonymous; there is no fundamental difference between the two.
+An archived backup explicitly stores changes within a Tar file.
+An archived backup is simply a compressed backup that has been stored in Gzipped format.
+#An archived backup is an uncompressed version of a compressed backup.
